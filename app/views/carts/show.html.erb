@@ -1,0 +1,20 @@
+<h1>Your Cart</h1>
+
+<% if @cart_items.any? %>
+  <% @cart_items.each do |item| %>
+    <div>
+      <h2><%= item.name %></h2>
+      <p>Price: Rs <%= (item.price) %></p>
+      <%= form_tag update_quantity_path, method: :patch do %>
+        <%= hidden_field_tag :product_id, item.id %>
+        <%= number_field_tag :quantity, session[:cart][item.id.to_s], min: 1 %>
+        <%= submit_tag "Update Quantity" %>
+      <% end %>
+      <%= button_to "Remove", remove_from_cart_path(product_id: item.id), method: :delete %>
+    </div>
+  <% end %>
+
+  <%= button_to "Place Order", orders_path, method: :post %>
+<% else %>
+  <p>Your cart is empty.</p>
+<% end %>
