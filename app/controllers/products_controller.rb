@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
-    @cart = session[:cart] || {}
-
+    @products = Product.order(created_at: :desc)
+    @cart = session[:cart] ||= {}
   end
 end
