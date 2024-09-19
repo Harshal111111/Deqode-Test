@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CartsController, type: :controller do
-  let(:product) { Product.create(name: "Test Product", price: 9.99) }
+  let(:product) { Product.create(name: "Test Product", price: 99) }
 
   describe "POST #add_to_cart" do
     it "adds the specified quantity of a product to the cart" do

@@ -8,7 +8,7 @@ RSpec.describe ProductsController, type: :controller do
     end
 
     it "assigns all products to @products" do
-      product = Product.create(name: "Test Product", price: 9.99)
+      product = Product.create(name: "Test Product", price: 99)
       get :index
       expect(assigns(:products)).to eq([product])
     end
