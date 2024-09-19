@@ -1,5 +1,8 @@
 # README
 
+I'm using session here to store the data, instead of having extra models.
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
